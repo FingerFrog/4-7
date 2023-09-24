@@ -1,8 +1,7 @@
 #include <iostream>
 #include <vector>
-using namespace std;
 
-class massiv 
+class massiv
 {
 public:
 	vector <double> mass;
@@ -13,15 +12,15 @@ public:
 	{
 		double temp;
 
-		cin >> mass_size;
+		std::cin >> mass_size;
 
-		for (int i = 0; i < mass_size; i++) 
+		for (int i = 0; i < mass_size; i++)
 		{
-			cin >> temp;
+			std::cin >> temp;
 			mass.push_back(temp);
 		}
 
-		cout << mass.size() << endl;
+		std::cout << mass.size() << std::endl;
 		result_cout();
 
 		menu();
@@ -35,7 +34,7 @@ private:
 
 		while (point != 0)
 		{
-			cin >> point;
+			std::cin >> point;
 
 			if (point == 0)
 			{
@@ -51,18 +50,18 @@ private:
 			}
 
 			result_cout();
-		} 
+		}
 	}
 
 	//добавление элемента в массив
-	void add_el() 
+	void add_el()
 	{
 		double temp;
-		cin >> temp;
+		std::cin >> temp;
 
 		mass.push_back(temp);
 
-		cout << "+: " << mass.size() << endl;
+		std::cout << "+: " << mass.size() << std::endl;
 	}
 
 	//удаление элемента из массива
@@ -70,7 +69,7 @@ private:
 	{
 		mass.pop_back();
 
-		cout << "-: " << mass.size() << endl;
+		std::cout << "-: " << mass.size() << std::endl;
 	}
 
 	//нахождение суммы и среднего арифметического
@@ -121,19 +120,19 @@ private:
 	//вывод массива
 	void print_mass()
 	{
-		cout.setf(ios::fixed);
-		cout.precision(3);
+		std::cout.setf(ios::fixed);
+		std::cout.precision(3);
 
 		for (int i = 0; i < mass.size(); i++)
 		{
-			cout << mass[i] << " ";
+			std::cout << mass[i] << " ";
 		}
-		cout << endl;
+		std::cout << std::endl;
 	}
 };
 
 
-int main() 
+int main()
 {
 	massiv start;
 
