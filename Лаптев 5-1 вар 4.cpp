@@ -4,10 +4,10 @@
 class massiv
 {
 public:
-	vector <double> mass;
+	std::vector <double> mass;
 	int mass_size;
 
-	//создание массива
+	//Г±Г®Г§Г¤Г Г­ГЁГҐ Г¬Г Г±Г±ГЁГўГ 
 	void new_mass()
 	{
 		double temp;
@@ -27,7 +27,7 @@ public:
 	}
 
 private:
-	//выбор действия
+	//ГўГ»ГЎГ®Г° Г¤ГҐГ©Г±ГІГўГЁГї
 	void menu()
 	{
 		int point = -1;
@@ -53,7 +53,7 @@ private:
 		}
 	}
 
-	//добавление элемента в массив
+	//Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ ГЅГ«ГҐГ¬ГҐГ­ГІГ  Гў Г¬Г Г±Г±ГЁГў
 	void add_el()
 	{
 		double temp;
@@ -64,7 +64,7 @@ private:
 		std::cout << "+: " << mass.size() << std::endl;
 	}
 
-	//удаление элемента из массива
+	//ГіГ¤Г Г«ГҐГ­ГЁГҐ ГЅГ«ГҐГ¬ГҐГ­ГІГ  ГЁГ§ Г¬Г Г±Г±ГЁГўГ 
 	void del_el()
 	{
 		mass.pop_back();
@@ -72,7 +72,7 @@ private:
 		std::cout << "-: " << mass.size() << std::endl;
 	}
 
-	//нахождение суммы и среднего арифметического
+	//Г­Г ГµГ®Г¦Г¤ГҐГ­ГЁГҐ Г±ГіГ¬Г¬Г» ГЁ Г±Г°ГҐГ¤Г­ГҐГЈГ® Г Г°ГЁГґГ¬ГҐГІГЁГ·ГҐГ±ГЄГ®ГЈГ®
 	void math_methods()
 	{
 		double summ = 0, arith_mean = 0;
@@ -87,7 +87,7 @@ private:
 		mass.push_back(summ);
 		mass.push_back(arith_mean);
 	}
-	//доп задание - умножение на наименьший аргумент
+	//Г¤Г®ГЇ Г§Г Г¤Г Г­ГЁГҐ - ГіГ¬Г­Г®Г¦ГҐГ­ГЁГҐ Г­Г  Г­Г ГЁГ¬ГҐГ­ГјГёГЁГ© Г Г°ГЈГіГ¬ГҐГ­ГІ
 	void dop_quest()
 	{
 		double min_num = mass[0];
@@ -106,7 +106,7 @@ private:
 		}
 	}
 
-	//вывод даных
+	//ГўГ»ГўГ®Г¤ Г¤Г Г­Г»Гµ
 	void result_cout()
 	{
 		print_mass();
@@ -117,10 +117,10 @@ private:
 		dop_quest();
 		print_mass();
 	}
-	//вывод массива
+	//ГўГ»ГўГ®Г¤ Г¬Г Г±Г±ГЁГўГ 
 	void print_mass()
 	{
-		std::cout.setf(ios::fixed);
+		std::cout.setf(std::ios::fixed);
 		std::cout.precision(3);
 
 		for (int i = 0; i < mass.size(); i++)
