@@ -3,12 +3,10 @@
 #include <numeric>
 #include <cmath>
 
-using namespace std;
-
 class Calculate
 {
-    vector <double> x;
-    vector <double> y;
+    std::vector <double> x;
+    std::vector <double> y;
 
 public:
     // конструктор
@@ -17,17 +15,17 @@ public:
         int n;
         double temp;
 
-        cin >> n;
+        std::cin >> n;
 
         for (int i = 0; i < n; i++)
         {
-            cin >> temp;
+            std::cin >> temp;
             x.push_back(temp);
         }
 
         for (int i = 0; i < n; i++)
         {
-            cin >> temp;
+            std::cin >> temp;
             y.push_back(temp);
         }
 
@@ -36,13 +34,13 @@ public:
 
 private:
     // Мат ожидание
-    double MO(const vector<double> temp)
+    double MO(const std::vector<double> temp)
     {
         return accumulate(temp.begin(), temp.end(), 0.0) / temp.size();
     }
 
     // Дисперсия
-    double Disp(const vector<double> temp) 
+    double Disp(const std::vector<double> temp) 
     {
         double mo = MO(temp);
         double res = 0;
@@ -77,22 +75,22 @@ private:
     // главный вывод
     void print()
     {
-        cout << "input= argument ";
+        std::cout << "input= argument ";
         for (int i = 0; i < x.size(); i++)
         {
-            cout << x[i] << ' ';
+            std::cout << x[i] << ' ';
         }
 
-        cout << "\nfunction ";
+        std::cout << "\nfunction ";
         for (int i = 0; i < y.size(); i++)
         {
-            cout << y[i] << ' ';
+            std::cout << y[i] << ' ';
         }
 
-        cout << "MO X= " << MO(x) << " Disp X= " << Disp(x);
-        cout << " MO Y= " << MO(y) << " Disp Y= " << Disp(y) << endl;
+        std::cout << "MO X= " << MO(x) << " Disp X= " << Disp(x);
+        std::cout << " MO Y= " << MO(y) << " Disp Y= " << Disp(y) << std::endl;
 
-        cout << "MonteKarlo= " << MK() << endl;
+        std::cout << "MonteKarlo= " << MK() << std::endl;
     }
 };
 
